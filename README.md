@@ -2,7 +2,7 @@
 
 [NoiseQA](https://noiseqa.github.io/) is an example dataset for evaluating QA model robustness to interface noise.
 The dataset consists of a subset of 240 paragraphs and 1190 question-answer pairs from
-the development set of SQuAD v1.1 [(Rajpurkar et al., 2016)](https://www.aclweb.org/anthology/D16-1264/), as sampled in XQuAD [](https://arxiv.org/abs/1910.11856). The NoiseQA dataset introduces three different types of noise to each of these questions:
+the development set of SQuAD v1.1 [(Rajpurkar et al., 2016)](https://www.aclweb.org/anthology/D16-1264/), as sampled in XQuAD [(Artetxe et al., 2020)](https://www.aclweb.org/anthology/2020.acl-main.421/). The NoiseQA dataset introduces three different types of noise to each of these questions:
  - Machine Translation noise, to simulate errors occurring when users ask questions in a different language than the language(s) the QA model was trained on;
  - Keyboard noise, to simulate the effect of users making spelling errors while typing questions into the QA model;
  - ASR noise, to simulate speech recognition errors occurring when users interact with the QA system through a voice interface. 
