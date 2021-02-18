@@ -64,13 +64,13 @@ If you use this dataset, please cite [[1]](https://arxiv.org/abs/2102.08345):
 [1] Ravichander, A., Dalmia, S., Ryskina, M., Metze, F., Hovy, E., & Black, A. (2021). [NoiseQA: Challenge Set Evaluation for User-Centric Question Answering](https://arxiv.org/abs/2102.08345), EACL 2021.
 
 ```
-@misc{ravichander2021noiseqa,
-      title={NoiseQA: Challenge Set Evaluation for User-Centric Question Answering}, 
+@inproceedings{ravichander2021noiseqa,
+      title={{NoiseQA: Challenge Set Evaluation for User-Centric Question Answering}}, 
       author={Abhilasha Ravichander and Siddharth Dalmia and Maria Ryskina and Florian Metze and Eduard Hovy and Alan W Black},
-      year={2021},
-      eprint={2102.08345},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL}
+      booktitle = {Conference of the European Chapter of the Association for Computational Linguistics (EACL)},
+      address = {Online},
+      month = {April},
+      url={https://arxiv.org/abs/2102.08345},
+      year={2021}
 }
 ```
-
