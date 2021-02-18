@@ -2,12 +2,15 @@
 
 [NoiseQA](https://noiseqa.github.io/) is an example dataset for evaluating QA model robustness to interface noise.
 The dataset consists of a subset of 240 paragraphs and 1190 question-answer pairs from
-the development set of SQuAD v1.1 [(Rajpurkar et al., 2016)](https://www.aclweb.org/anthology/D16-1264/), as sampled in [XQuAD](https://arxiv.org/abs/1910.11856). The NoiseQA dataset introduces three different types of noise to each of these questions: (1) Machine Translation noise, to simulate the effect of users that speak a different language than the language(s) the QA model was trained on, (2) Keyboard noise, to simulate the effect of people making spelling errors while interacting with the QA model via keyboard, (3) ASR noise, to simulate the effect of users interacting with the QA system through a voice interface. 
+the development set of SQuAD v1.1 [(Rajpurkar et al., 2016)](https://www.aclweb.org/anthology/D16-1264/), as sampled in XQuAD [](https://arxiv.org/abs/1910.11856). The NoiseQA dataset introduces three different types of noise to each of these questions:
+ - Machine Translation noise, to simulate errors occurring when users ask questions in a different language than the language(s) the QA model was trained on;
+ - Keyboard noise, to simulate the effect of users making spelling errors while typing questions into the QA model;
+ - ASR noise, to simulate speech recognition errors occurring when users interact with the QA system through a voice interface. 
 
-For more information on how the dataset was created, refer to our paper,
+For more information on how each dataset was created, please refer to our paper,
 [NoiseQA: Challenge Set Evaluation for User-Centric Question Answering](https://arxiv.org/abs/2102.08345).
 
-All files are in json format following the SQuAD dataset format. A parallel example in NoiseQA can be seen in the image below. 
+All files are in JSON format and follow the original SQuAD dataset file format. The image below shows a parallel example from NoiseQA, where the same question is distorted by the three types of interface noise.
 
 ![An example from NoiseQA](noiseqa_example.png)
 
@@ -22,7 +25,7 @@ The repository consists of three directories:
 
 - #### Natural
 
-  This directory contains challenge sets with constructed natural noise, as described in the paper:
+  This directory contains challenge sets with collected natural noise, as described in the paper:
   - ASR Noise: `xquad-asr-natural.json`
   - Translation Noise: `xquad-translation-natural.json`
   - Keyboard Noise: `xquad-keyboard-natural.json`
@@ -43,19 +46,19 @@ For both synthetic and natural noise, translation noise is sourced from German. 
   - Vietnamese: `xquad-context-en-question-vi.json`
   - Chinese: `xquad-context-en-question-zh.json`
 
-As the dataset is based on SQuAD v1.1, there are no unanswerable questions in the data. We chose this
-setting to isolate the effect of interface noise from other challenging confounds
+As the dataset is based on SQuAD v1.1, there are no unanswerable questions in the data; we chose this
+setting to isolate the effect of interface noise from other challenging confounds.
 
 ## Training and evaluation
 
 In order to evaluate on NoiseQA, models should be trained on the SQuAD v1.1 training file. which can be
-downloaded from [here](https://github.com/rajpurkar/SQuAD-explorer/blob/master/dataset/train-v1.1.json). 
-Model validation similarly can be conducted on the SQuAD v1.1 validation file, or a synthetically noisy volidation set (such as those in NoiseQA-synthetic) depending on the final usage scenario to be emulated. Final testing should ideally be done on a natural test set if available (such as those in NoiseQA-natural).
+downloaded [here](https://github.com/rajpurkar/SQuAD-explorer/blob/master/dataset/train-v1.1.json). 
+Model validation similarly can be conducted on the SQuAD v1.1 validation file, or a synthetically noised validation set (such as those in NoiseQA-synthetic) depending on which usage scenario is being emulated. Final testing should ideally be performed on a natural test set if available (such as those in NoiseQA-natural).
 
 
 ## Future Evaluations
 
-Individual practitioners would seek to develop challenge evaluations based on their specific task requirements, for different resources, users, and real-world scenarios. If you do so, we would love to hear about it! Please feel free to open a Github Issue, and we will add a description and pointer to your resource in the repository and [NoiseQA](https://noiseqa.github.io/) website.
+Individual practitioners would seek to develop challenge evaluations based on their specific task requirements, for different resources, users, and real-world scenarios. If you do so, we would love to hear about it! Please feel free to open a Github Issue, and we will add a description and pointer to your resource in the repository and on the [NoiseQA website](https://noiseqa.github.io/).
 
 ## Reference
 
@@ -65,12 +68,12 @@ If you use this dataset, please cite [[1]](https://arxiv.org/abs/2102.08345):
 
 ```
 @inproceedings{ravichander2021noiseqa,
-      title={{NoiseQA: Challenge Set Evaluation for User-Centric Question Answering}}, 
-      author={Abhilasha Ravichander and Siddharth Dalmia and Maria Ryskina and Florian Metze and Eduard Hovy and Alan W Black},
-      booktitle = {Conference of the European Chapter of the Association for Computational Linguistics (EACL)},
-      address = {Online},
-      month = {April},
-      url={https://arxiv.org/abs/2102.08345},
-      year={2021}
-}
+  title={{NoiseQA}: Challenge Set Evaluation for User-Centric Question Answering},
+  author={Abhilasha Ravichander and Siddharth Dalmia and Maria Ryskina and Florian Metze and Eduard Hovy and Alan W Black},
+  booktitle = {Conference of the European Chapter of the Association for Computational Linguistics (EACL)},
+  address = {Online},
+  month = {April},
+  url={https://arxiv.org/abs/2102.08345},
+  year={2021}
+  }
 ```
